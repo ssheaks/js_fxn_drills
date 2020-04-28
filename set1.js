@@ -23,16 +23,17 @@ function createGreeting(name, age) {
 }
 
 let arr = [['Sarah', 22], ['Bonnie', 6], [true, 43], ['Heidi', -22], ['John',false]];
-arr.forEach(([name, age]) => console.log(name, age) );
-
-try {
-    arr.forEach(([name, age]) => {
-    let greeting = createGreeting(name, age);
-    console.log(greeting)
-    })
-} catch(e) {
-    console.error(e.message);
-}
+//use array destructuring
+arr.forEach(([name, age]) => {
+    try {
+        // arr.forEach(([name, age]) => {
+        let greeting = createGreeting(name, age);
+        console.log(greeting)
+        // })
+    } catch(e) {
+        console.error(e.message);
+    }
+});
 
 try {
     const greeting = createGreeting('Mandy', 23);
