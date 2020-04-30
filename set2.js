@@ -81,3 +81,55 @@ function decode(str) {
 
 const message = 'craft block argon meter bells brown croon droop';
 decode(message);
+
+// How many days in a month
+// Write a function that takes the arguments month (string) and leapYear (boolean, optional) and use a switch statement to return a sentence explaining how many days there are in that month.
+
+// For example if the argument provided is 'January', the function should return "January has 31 days". For February, it should return the appropriate 29 for leap years and 28 for non-leap. If the string doesn't match a valid month, throw an error with the message: 'Must provide a valid month.'
+
+// HINT: If you have cases that return the same result, you can use switch's fallthrough behavior to provide one block of code for many cases. E.g.:
+
+// switch(name) {
+//   case 'rich':
+//   case 'robert':
+//   case 'ronald':
+//     result = 'All names begin with R!'; 
+//     break;
+// }
+
+function daysInMonth(month, leapYear = false) {
+    let result = '';
+    switch(month) {
+        case 'January':
+        case 'March':
+        case 'May':
+        case 'July':
+        case 'August':
+        case 'October':
+        case 'December':
+            result = `${month} has 31 days`;
+            break;
+        case 'April':
+        case 'June':
+        case 'September':
+        case 'November':
+            result = `${month} has 30 days`;
+            break;
+        case 'February':
+            if(leapYear===true) {
+                result = `${month} has 29 days`;
+            }else {
+                result = `${month} has 28 days`;
+            }
+            break;
+        default: 
+            result = 'Please enter a valid month';
+    }
+    console.log(result);
+    return result;
+}
+
+daysInMonth('July');
+daysInMonth('February');
+daysInMonth('February', true);
+daysInMonth('Februa');
