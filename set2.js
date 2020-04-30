@@ -133,3 +133,37 @@ daysInMonth('July');
 daysInMonth('February');
 daysInMonth('February', true);
 daysInMonth('Februa');
+
+// Rock Paper Scissors
+// In the game Rock Paper Scissors, two players simultaneously choose one of the three options: rock, paper, or scissors. If both players choose the same option, the result is a tie. Otherwise the winner is determined as follows:
+
+// Rock beats scissors
+// Scissors beats paper
+// Paper beats rock
+// Create a game in which you are playing against the computer. The computer randomly chooses rock, paper, or scissors. Your function should take a number as an argument of 1, 2, or 3 to represent rock, paper, or scissors, respectively, and determine the winner. If you enter anything other than a number between 1-3, throw an error.
+
+// The code to generate a random number between 1 and 3 is -
+
+// const randomNo = Math.floor(Math.random() * 3) + 1;
+//rock = 1, paper = 2, scissors = 3
+
+function rockPaperScissors(choice) {
+    const randomNo = Math.floor(Math.random() * 3) + 1;
+    console.log(randomNo);
+    if(randomNo === choice) {
+        console.log(`It's a tie`);
+    } else if(randomNo === 1 && choice === 2) {
+        console.log('You win');
+    } else if(randomNo === 1 && choice === 3) {
+        console.log('Computer wins');
+    } else if(randomNo === 2 && choice === 1) {
+        console.log('Computer wins');
+    } else if(randomNo === 2 && choice === 3) {
+        console.log('You win');
+    } else if(randomNo === 3 && choice === 1) {
+        console.log('You win');
+    } else if(randomNo === 3 && choice === 2) {
+        console.log('Computer wins');
+    } 
+}
+rockPaperScissors(1);
